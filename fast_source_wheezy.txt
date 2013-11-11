@@ -1,0 +1,36 @@
+### Debian 7.0 Wheezy.
+### Chave GPG: apt-get install debian-archive-keyring
+deb http://sft.if.usp.br/debian/ wheezy main contrib non-free
+deb http://ftp.br.debian.org/debian/ wheezy main contrib non-free
+deb http://linorg.usp.br/debian/ wheezy main contrib non-free
+deb http://ftp.debian.org/debian/ wheezy main contrib non-free
+ 
+### Debian 7.0 Wheezy Security 'Updates'.
+deb http://sft.if.usp.br/debian-security/ wheezy/updates main contrib non-free
+deb http://ftp.br.debian.org/debian-security/ wheezy/updates main contrib non-free
+deb http://security.debian.org/ wheezy/updates main contrib non-free
+deb http://linorg.usp.br/debian-security/ wheezy/updates main contrib non-free
+ 
+### Debian 7.0 Wheezy Updates 'Volatile'.
+deb http://sft.if.usp.br/debian/ wheezy-updates main contrib non-free
+deb http://ftp.br.debian.org/debian/ wheezy-updates main contrib non-free
+deb http://linorg.usp.br/debian/ wheezy-updates main contrib non-free
+deb http://ftp.debian.org/debian/ wheezy-updates main contrib non-free
+ 
+### Debian 7.0 Wheezy 'Proposed Updates'.
+deb http://sft.if.usp.br/debian/ wheezy-proposed-updates main contrib non-free
+deb http://ftp.br.debian.org/debian/ wheezy-proposed-updates main contrib non-free
+deb http://linorg.usp.br/debian/ wheezy-proposed-updates main contrib non-free
+deb http://ftp.debian.org/debian/ wheezy-proposed-updates main contrib non-free
+ 
+### Debian 7.0 Wheezy 'Backports'.
+deb http://sft.if.usp.br/debian/ wheezy-backports main contrib non-free
+deb http://ftp.br.debian.org/debian/ wheezy-backports main contrib non-free
+deb http://linorg.usp.br/debian/ wheezy-backports main contrib non-free
+deb http://ftp.debian.org/debian/ wheezy-backports main contrib non-free
+
+### Chrome
+deb http://dl.google.com/linux/chrome/deb/ stable main
+
+### DropBox
+deb http://linux.dropbox.com/debian wheezy main
