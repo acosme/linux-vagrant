@@ -2,7 +2,7 @@
 	echo "$USER ALL=(ALL:ALL) ALL" | sudo tee -a /etc/sudoers > /dev/null
 
 #packages and fast mirrors in Brazil
-	echo "fast_source_wheezy.txt > /etc/apt/source.list | sudo tee -a /etc/apt/source.list > /dev/null
+	echo "fast_source_wheezy.txt >> /etc/apt/source.list | sudo tee -a /etc/apt/source.list > /dev/null
 	apt-get update
 	apt-get install debian-archive-keyring
 	apt-get update
@@ -15,7 +15,7 @@
 	curl -L https://get.rvm.io | bash -s stable
 	source ~/.rvm/scripts/rvm
 	echo "[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm" > ~/.bashrc
-	
+
 #essencials libs
 	sudo apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion
 	sudo apt-get install git git-svn gitk ssh libssh-dev
@@ -30,6 +30,7 @@
 	sudo apt-get install geany
 	wget https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb
 	sudo dpkg -i google-chrome-stable_current_i386.deb
+	ssh-keygen
 
 #gvim
 	git clone git://github.com/akitaonrails/vimfiles.git ]] ~/.vim
@@ -38,12 +39,14 @@
 	echo "filetype on" > ~/.vimrc
 	echo "source ~/.vim/vimrc" >> ~/.vimrc
 	#ou apenas sudo apt-get install vim-gnome
-	
-	
+
+
 #others:
 	rm -rf google-chrome-stable_current_i386.deb
 	mkdir ~/projetos && cd ~/projetos
-	cat bashrc_git_rvm.txt > ~/.bashrc
+	cat bashrc_git_rvm.txt >> ~/.bashrc
+	cat bashrc_aliasing.txt >> ~/.bashrc
+    source ~/.bashrc
 	#dropbox
 	sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 5044912E
 	sudo apt-get install dropbox

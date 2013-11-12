@@ -1,0 +1,43 @@
+
+#--RVM/ RUBY
+alias rgl="rvm gemset list"
+alias rgc="rvm gemset create"
+alias rgu="rvm gemset use"
+
+#---GIT
+alias gst="git status -s"
+alias gps="git push"
+alias gpl="git pull"
+alias gcw="git checkout working"
+alias gcm="git checkout master"
+alias gco="git commit -am "
+alias gmm="git merge master"
+alias gmw="git merge working"
+alias gb="git branch"
+
+#---SOFTWARE SCRIPT
+alias musica="ruby ~/Dropbox/script/play/tocaMusica.rb"
+alias tutor="cd ~/Dropbox/script/ && sh tutorialDesenvolvimento.sh"
+alias etutor="gvim ~/Dropbox/script/tutorialDesenvolvimento.java"
+alias eclipse="cd /opt/eclipse && ./eclipse"
+alias pw="libreoffice ~/Dropbox/docs/pw.ods"
+alias est="libreoffice ~/Dropbox/academy/2013-02/situacao_disciplinas.xls"
+alias liga="emulator -avd Android_2.3.3"
+alias imbuteLegenda="mencoder pb_season1_16.avi -sub pb_season1_16.srt -subcp ISO-8859-15 -subfont-text-scale 3.0 -subpos 99 -of avi -ovc xvid -oac mp3lame -xvidencopts bitrate=1500:autoaspect -lameopts cbr:br=160:vol=1 -o saida.avi"
+
+#---SYSTEM
+alias eb="gvim ~/.bashrc"
+alias sb="source ~/.bashrc"
+alias sai="sudo apt-get install "
+
+#---PROJECT
+alias banco="ruby script/banco.rb"
+alias limpa="ruby script/limpaArquivos.rb"
+
+
+#---PATH
+export ANT_HOME=/opt/ant
+export PATH=$PATH:$ANT_HOME/bin
+export PATH=${PATH}:/opt/sdk/tools:/opt/sdk/platform-tools
+export PATH="/opt/sdk/build-tools/17.0.0:$PATH"
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
