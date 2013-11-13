@@ -42,7 +42,7 @@
 
 
 #others:
-	rm -rf google-chrome-stable_current_i386.deb
+	rm ~/google-chrome-stable_current_i386.deb
 	mkdir ~/projetos && cd ~/projetos
 	cat bashrc_git_rvm.txt >> ~/.bashrc
 	cat bashrc_aliasing.txt >> ~/.bashrc
