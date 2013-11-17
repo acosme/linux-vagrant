@@ -3,7 +3,7 @@
 	$ echo "<user> ALL=(ALL:ALL) ALL" | sudo tee -a /etc/sudoers > /dev/null
 
 #packages and fast mirrors in Brazil
-	$ cat fast_source_wheezy.txt >> /etc/apt/source.list | sudo tee -a /etc/apt/source.list > /dev/null
+	$ sudo sh -c 'cat /dev/null > /etc/apt/sources.list && cat fast_source_wheezy.txt >> /etc/apt/sources.list'
 	$ apt-get update
 	$ apt-get install debian-archive-keyring
 	$ apt-get update
