@@ -1,5 +1,5 @@
 #permissions
-	//change <user> to your user name
+	//change <user> to your user name and exec in sudo terminal:
 	$ echo "<user> ALL=(ALL:ALL) ALL" | sudo tee -a /etc/sudoers > /dev/null
 
 #packages and fast mirrors in Brazil
