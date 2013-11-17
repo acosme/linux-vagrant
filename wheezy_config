@@ -1,5 +1,6 @@
 #permissions
-	echo "$USER ALL=(ALL:ALL) ALL" | sudo tee -a /etc/sudoers > /dev/null
+	//change <user> to your user name
+	$ echo "<user> ALL=(ALL:ALL) ALL" | sudo tee -a /etc/sudoers > /dev/null
 
 #packages and fast mirrors in Brazil
 	echo "fast_source_wheezy.txt >> /etc/apt/source.list | sudo tee -a /etc/apt/source.list > /dev/null
