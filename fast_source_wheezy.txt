@@ -30,3 +30,7 @@ deb http://linorg.usp.br/debian/ wheezy-backports main contrib non-free
 deb http://ftp.debian.org/debian/ wheezy-backports main contrib non-free
 
 
+### Chrome
+#deb http://dl.google.com/linux/chrome/deb/ stable main
+### DropBox
+#deb http://linux.dropbox.com/debian wheezy main
