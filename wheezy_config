@@ -3,52 +3,52 @@
 	$ echo "<user> ALL=(ALL:ALL) ALL" | sudo tee -a /etc/sudoers > /dev/null
 
 #packages and fast mirrors in Brazil
-	echo "fast_source_wheezy.txt >> /etc/apt/source.list | sudo tee -a /etc/apt/source.list > /dev/null
-	apt-get update
-	apt-get install debian-archive-keyring
-	apt-get update
-	apt-get upgrade
-	apt-get dist-upgrade
+	$ echo "fast_source_wheezy.txt >> /etc/apt/source.list | sudo tee -a /etc/apt/source.list > /dev/null
+	$ apt-get update
+	$ apt-get install debian-archive-keyring
+	$ apt-get update
+	$ apt-get upgrade
+	$ apt-get dist-upgrade
 
 
 #rvm config
-	sudo apt-get install curl
-	curl -L https://get.rvm.io | bash -s stable
-	source ~/.rvm/scripts/rvm
-	echo "[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm" > ~/.bashrc
+	$ sudo apt-get install curl
+	$ curl -L https://get.rvm.io | bash -s stable
+	$ source ~/.rvm/scripts/rvm
+	$ echo "[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm" > ~/.bashrc
 
 #essencials libs
-	sudo apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion
-	sudo apt-get install git git-svn gitk ssh libssh-dev
+	$ sudo apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion
+	$ sudo apt-get install git git-svn gitk ssh libssh-dev
 
 #rvm main
-	rvm install ruby-1.9.3-p194
-	rvm 1.9.3-p194 --default
+	$ rvm install ruby-1.9.3-p194
+	$ rvm 1.9.3-p194 --default
 
 #essencial packages
-	sudo apt-get install mysql-server mysql-client libmysqlclient-dev
-	sudo apt-get install imagemagick libmagickwand-dev
-	sudo apt-get install geany
-	wget https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb
-	sudo dpkg -i google-chrome-stable_current_i386.deb
-	ssh-keygen
+	$ sudo apt-get install mysql-server mysql-client libmysqlclient-dev
+	$ sudo apt-get install imagemagick libmagickwand-dev
+	$ sudo apt-get install geany
+	$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb
+	$ sudo dpkg -i google-chrome-stable_current_i386.deb
+	$ ssh-keygen
 
 #gvim
-	git clone git://github.com/akitaonrails/vimfiles.git ]] ~/.vim
-	cd .vim
-	git submodule update --init
-	echo "filetype on" > ~/.vimrc
-	echo "source ~/.vim/vimrc" >> ~/.vimrc
+	$ git clone git://github.com/akitaonrails/vimfiles.git ]] ~/.vim
+	$ cd .vim
+	$ git submodule update --init
+	$ echo "filetype on" > ~/.vimrc
+	$ echo "source ~/.vim/vimrc" >> ~/.vimrc
 	#ou apenas sudo apt-get install vim-gnome
 
 
 #others:
-	rm ~/google-chrome-stable_current_i386.deb
-	mkdir ~/projetos && cd ~/projetos
-	cat bashrc_git_rvm.txt >> ~/.bashrc
-	cat bashrc_aliasing.txt >> ~/.bashrc
-    source ~/.bashrc
+	$ rm ~/google-chrome-stable_current_i386.deb
+	$ mkdir ~/projetos && cd ~/projetos
+	$ cat bashrc_git_rvm.txt >> ~/.bashrc
+	$ cat bashrc_aliasing.txt >> ~/.bashrc
+        $ source ~/.bashrc
 	#dropbox
-	sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 5044912E
-	sudo apt-get install dropbox
+	$ sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 5044912E
+	$ sudo apt-get install dropbox
 
