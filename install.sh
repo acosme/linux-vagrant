@@ -14,7 +14,7 @@ rvm install ruby-1.9.3-p194 && rvm 1.9.3-p194 --default
 sudo apt-get install mysql-server mysql-client libmysqlclient-dev imagemagick libmagickwand-dev geany && cd ~ && wget https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb && sudo dpkg -i google-chrome-stable_current_i386.deb && ssh-keygen
 
 #gvim #ou apenas sudo apt-get install vim-gnome
-git clone git://github.com/akitaonrails/vimfiles.git ]] ~/.vim && cd ~/.vim && git submodule update --init && echo "filetype on" > ~/.vimrc && echo "source ~/.vim/vimrc" >> ~/.vimrc
+git clone git://github.com/akitaonrails/vimfiles.git ~/.vim && cd ~/.vim && git submodule update --init && echo "filetype on" > ~/.vimrc && echo "source ~/.vim/vimrc" >> ~/.vimrc
 
 #others and dropbox:
 rm ~/google-chrome-stable_current_i386.deb && mkdir ~/projetos &&
