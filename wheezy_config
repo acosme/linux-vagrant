@@ -51,4 +51,5 @@
 	#remove chrome and dropbox packages from /etc/apt/sources.list
 	$sudo apt-get update
 
-#JAVA: UNINSTALL JRE/JDK 1.6 and install 1.7
+#JAVA: INSTALL JRE/JDK 1.6 and...
+	$ sudo apt-get install icedtea-plugin
