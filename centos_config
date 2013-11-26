@@ -1,2 +1,3 @@
 # GVIM
  $ yum install vim-common vim-minimal vim-enhanced vim-X11
+ # enter in .vim/.gitmodules and replace all 'git://' to 'https://'
