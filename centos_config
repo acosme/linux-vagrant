@@ -1,1 +1,2 @@
-#
+# GVIM
+ $ yum install vim-common vim-minimal vim-enhanced vim-X11
