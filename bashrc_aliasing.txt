@@ -1,4 +1,3 @@
-
 #--RVM/ RUBY
 alias rgl="rvm gemset list"
 alias rgc="rvm gemset create"
@@ -20,8 +19,6 @@ alias musica="ruby ~/Dropbox/script/play/tocaMusica.rb"
 alias tutor="cd ~/Dropbox/script/ && sh tutorialDesenvolvimento.sh"
 alias etutor="gvim ~/Dropbox/script/tutorialDesenvolvimento.java"
 alias eclipse="cd /opt/eclipse && ./eclipse"
-alias pw="libreoffice ~/Dropbox/docs/pw.ods"
-alias est="libreoffice ~/Dropbox/academy/2013-02/situacao_disciplinas.xls"
 alias liga="emulator -avd Android_2.3.3"
 alias imbuteLegenda="mencoder pb_season1_16.avi -sub pb_season1_16.srt -subcp ISO-8859-15 -subfont-text-scale 3.0 -subpos 99 -of avi -ovc xvid -oac mp3lame -xvidencopts bitrate=1500:autoaspect -lameopts cbr:br=160:vol=1 -o saida.avi"
 
