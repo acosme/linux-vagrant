@@ -28,7 +28,7 @@
 #essencial packages
 	$ sudo apt-get install mysql-server mysql-client libmysqlclient-dev
 	$ sudo apt-get install imagemagick libmagickwand-dev
-	$ sudo apt-get install geany
+	$ sudo apt-get install geany sl
 	$ cd ~
 	$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb
 	$ sudo dpkg -i google-chrome-stable_current_i386.deb
