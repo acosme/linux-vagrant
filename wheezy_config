@@ -28,7 +28,7 @@
 #essencial packages
 	$ sudo apt-get install mysql-server mysql-client libmysqlclient-dev
 	$ sudo apt-get install imagemagick libmagickwand-dev
-	$ sudo apt-get install geany sl
+	$ sudo apt-get install geany
 	$ cd ~
 	$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb
 	$ sudo dpkg -i google-chrome-stable_current_i386.deb
@@ -55,6 +55,8 @@
 	$ sudo apt-get install dropbox
 	#remove chrome and dropbox packages from /etc/apt/sources.list
 	$sudo apt-get update
+	#palhaçada:
+	$ sudo apt-get install sl figlet xcowsay oneko //xeyes
 
 #JAVA: INSTALL JRE/JDK 1.6 and...
 	$ sudo apt-get install icedtea-plugin
