@@ -56,7 +56,7 @@
 	#remove chrome and dropbox packages from /etc/apt/sources.list
 	$sudo apt-get update
 	#palhaçada:
-	$ sudo apt-get install sl figlet xcowsay oneko //xeyes
+	$ sudo apt-get install sl figlet xcowsay cowsay cowthink toilet oneko fortune cmatrix espeak libaa-bin bb funny-manpages //xeyes, rev, -- google ASCIIquarium
 
 #JAVA: INSTALL JRE/JDK 1.6 and...
 	$ sudo apt-get install icedtea-plugin
