@@ -1,0 +1,41 @@
+#rvm config
+$ sudo apt-get install curl
+$ curl -L https://get.rvm.io | bash -s stable
+$ source ~/.rvm/scripts/rvm
+$ echo "[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm" > ~/.bashrc
+
+#essencials libs
+$ sudo apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion nodejs
+
+#essencial packages
+$ sudo apt-get install git git-svn gitk ssh libssh-dev mysql-server mysql-client libmysqlclient-dev imagemagick libmagickwand-dev geany python-gtk2-dev synaptic flashplugin-installer
+$ cd ~
+$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+$ wget https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_1.6.0_amd64.deb
+$ wget https://dl.google.com/linux/direct/google-talkplugin_current_amd64.deb
+$ sudo dpkg -i google-chrome-stable_current_i386.deb
+$ sudo dpkg -i dropbox_1.6.0_amd64.deb
+$ sudo dpkg -i google-talkplugin_current_amd64.deb
+
+
+#Development environment
+
+$ rvm install ruby-1.9.3-p194
+$ rvm 1.9.3-p194 --default
+$ sudo apt-get install vim vim-gnome exuberant-ctags ncurses-term ack
+$ curl -Lo- https://bit.ly/janus-bootstrap | bash
+$ cat bashrc_git_rvm.txt >> ~/.bashrc
+$ cat bashrc_aliasing.txt >> ~/.bashrc
+$ source ~/.bashrc
+
+#others:
+$ ssh-keygen
+$ rm ~/google-chrome-stable_current_i386.deb
+$ rm ~/dropbox_1.6.0_amd64.deb
+$ mkdir ~/projetos && cd ~/projetos
+$ sudo apt-get install sl figlet xcowsay cowsay cowthink toilet oneko fortune cmatrix espeak libaa-bin bb funny-manpages //xeyes, rev, -- google ASCIIquarium
+
+
+
+#JAVA: INSTALL JRE/JDK 1.6 and...
+$ sudo apt-get install icedtea-plugin
