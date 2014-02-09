@@ -5,7 +5,7 @@ $ source ~/.rvm/scripts/rvm
 $ echo "[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm" > ~/.bashrc
 
 #essencials libs
-$ sudo apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion nodejs lib32z1 ia32-libs
+$ sudo apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion nodejs lib32z1 ia32-libs libnl-genl-3-dev
 
 #essencial packages
 $ sudo apt-get install git git-svn gitk ssh libssh-dev mysql-server mysql-client libmysqlclient-dev postgresql libpq-dev imagemagick libmagickwand-dev geany python-gtk2-dev synaptic flashplugin-installer
