@@ -24,8 +24,10 @@ function rvm_version {
 }
 
 function if_rvm_gemset {
-  #see if is a git repo
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  #see if is a git or svn repo
+  if [ ! -d .svn/ ] && [ ! -d .git/ ]; then
+      return
+  fi
   local gemset=$(rvm gemset list | grep '=>')
   if ! cmp -s "${gemset:3}" ""; then
       echo "<${gemset:3}>"
