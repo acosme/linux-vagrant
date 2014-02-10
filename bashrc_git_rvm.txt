@@ -4,12 +4,13 @@ ESC="\033" # This is the escape sequence
 NO_COLOR="$ESC[0m"
 IRED="$ESC[1;31m" # ANSI color code for intense/bold red
 IGRN="$ESC[1;32m" # ANSI color code for intense/bold green
+IBLUE="$ESC[1;34m"
 
 # From http://railstips.org/blog/archives/2009/02/02/bedazzle-your-bash-prompt-with-git-info/
 # I had to change 'git-symbolic-ref' to 'git symbolic-ref'
 function parse_git_branch {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  echo " ["${ref#refs/heads/}"]" # I wanted my branch wrapped in [], use () or <> or whatever
+  echo "["${ref#refs/heads/}"]" # I wanted my branch wrapped in [], use () or <> or whatever
 }
 
 # from http://ariejan.net/2010/04/25/ruby-version-and-gemset-in-your-bash-prompt-yes-sir
@@ -23,9 +24,11 @@ function rvm_version {
 }
 
 function if_rvm_gemset {
+  #see if is a git repo
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
   local gemset=$(rvm gemset list | grep '=>')
   if ! cmp -s "${gemset:3}" ""; then
-      echo "(${gemset:3})"
+      echo "<${gemset:3}>"
   fi
 }
 #PS1="\h:\W \u\$" # For reference, here's the default OS X prompt
@@ -33,5 +36,5 @@ function if_rvm_gemset {
 
 # I had to put the \[ and \] down here, as opposed to $IRED, to avoid wrapping funkiness.
 #export PS1="\[$IRED\]\$(rvm_version)\[$NO_COLOR\]\W\[$IGRN\]\$(parse_git_branch)\[$NO_COLOR\]\n \$ "
-export PS1="\[$IRED\]\$(date +%k:%M:%S)\$(if_rvm_gemset)\[$NO_COLOR\]\W\[$IGRN\]\$(parse_git_branch)\[$NO_COLOR\] $ "
+export PS1="\$(date +%k:%M:%S)\[$IRED\]\$(if_rvm_gemset)\[$IBLUE\]\W\[$IGRN\]\$(parse_git_branch)\[$NO_COLOR\]$ "
 
