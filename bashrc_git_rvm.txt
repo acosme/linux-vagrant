@@ -1,15 +1,54 @@
-
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+function comit {
+  local _branch=$(parse_git_branch)
+  local branch=${_branch:1:${#_branch}-2}
+  git add .
+  git commit -am $1
+  git checkout master
+  git pull bit master
+  git merge  | grep 'CONFLICT' &> /dev/null
+  if [ $? == 0]; then
+     echo "conflito..."
+  else
+    comitEnd $branch
+  fi
+}
+
+function comitEnd {
+  git push bit master
+  git checkout $1
+  git merge master
+  rails s
+}
+
+function comitGet {
+  local _branch=$(parse_git_branch)
+  local branch=${_branch:1:${#_branch}-2}
+  git checkout master
+  git pull bit master
+  echo "${branch}"
+  if [ "$branch" != "master" ]; then
+    git checkout $branch
+    git merge master
+    rails s
+  else
+    echo "retorne manualmente para o seu branch de trabalho..."
+  fi
+}
 
 ESC="\033" # This is the escape sequence
 NO_COLOR="$ESC[0m"
 IRED="$ESC[1;31m" # ANSI color code for intense/bold red
 IGRN="$ESC[1;32m" # ANSI color code for intense/bold green
 IBLUE="$ESC[1;34m"
+IYEL="$ESC[1;33m" # ANSI color code for intense/bold green
 
 # From http://railstips.org/blog/archives/2009/02/02/bedazzle-your-bash-prompt-with-git-info/
 # I had to change 'git-symbolic-ref' to 'git symbolic-ref'
-
+function parse_git_branch {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  echo "["${ref#refs/heads/}"]" # I wanted my branch wrapped in [], use () or <> or whatever
+}
 
 # from http://ariejan.net/2010/04/25/ruby-version-and-gemset-in-your-bash-prompt-yes-sir
 function rvm_version {
@@ -21,51 +60,31 @@ function rvm_version {
   [ "$full" != "" ] && echo "${full}:" # the colon at the end is a delimiter, you could use a space instead
 }
 
-function parse_git_branch {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  echo "["${ref#refs/heads/}"]" # I wanted my branch wrapped in [], use () or <> or whatever
-}
-
 function if_rvm_gemset {
   #see if is a git or svn repo
   if [ ! -d .svn/ ] && [ ! -d .git/ ]; then
-      return
-  fi
-
-  local gemset=$(rvm gemset list | grep '=>')
-  #echo "$(gemset)"
-  #if [ "${gemset:3}" = "(default)" ]; then
-      #se nome do diretorio for igual ao da gemset
-  #    local dir="$(home)"
-  #    local gemset_eq_dir=$(rvm gemset list | grep dir)
-  #    if [ ! gemset_eq_dir = ""]; then
-  #        echo "<${gemset_eq_dir}>"
-  #    fi
-  #else
+      #return
+      echo -e "${IBLUE}$(pwd)"
+  else
+    local gemset=$(rvm gemset list | grep '=>')
     if ! cmp -s "${gemset:3}" ""; then
-          echo "<${gemset:3}>"
+       local basedir=$(basename $(pwd))
+       echo -e "${IBLUE}${basedir}${IRED}<${gemset:3}>"
     fi
-  #fi
+  fi
 }
 
-function home {
-    echo "$(pwd)" | grep -o "/" | wc -l
-}
+export PS1="\[$IRED\]\$(if_rvm_gemset)\[$IGRN\]\$(parse_git_branch)\[$NO_COLOR\]$ "
 
-function terminal {
-    if [ "$(home)" = "2" ]; then
-        echo "$(pwd)"
-    else
-        local rvm_gemset="$(if_rvm_gemset)"
-        local parse_branch="$(parse_git_branch)"
-        echo "\[${IRED}\]\$(if_rvm_gemset)\[$IBLUE\]\W\[$IGRN\]\$(parse_git_branch)\[$NO_COLOR\]$ "
-    fi
 
-}
+export PS1="\[$IRED\]\$(if_rvm_gemset)\[$IGRN\]\$(parse_git_branch)\[$NO_COLOR\]$ "
+PATH=$PATH:.
 
-#export PS1="\$(date +%k:%M:%S)\[$IRED\]\$(if_rvm_gemset)\[$IBLUE\]\W\[$IGRN\]\$(parse_git_branch)\[$NO_COLOR\]$ "
-export PS1="\[$IRED\]\$(if_rvm_gemset)\[$IBLUE\]\W\[$IGRN\]\$(parse_git_branch)\[$NO_COLOR\]$ "
-#export PS1="$(terminal)"
 
+[[ -s /home/adriano/.rvm/scripts/rvm ]] && source /home/adriano/.rvm/scripts/rvm
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+export PGHOST=localhost
 
 PATH=$PATH:.
