@@ -16,8 +16,12 @@ $ wget https://dl.google.com/linux/direct/google-talkplugin_current_amd64.deb
 $ sudo dpkg -i google-chrome-stable_current_i386.deb
 $ sudo dpkg -i dropbox_1.6.0_amd64.deb
 $ sudo dpkg -i google-talkplugin_current_amd64.deb
-
-
+  # dropbox if permission fail:
+    # $ sudo chown "$USER" "$HOME"
+    # $ sudo chown -R "$USER" ~/Dropbox ~/.dropbox ~/.dropbox-master
+    # $ sudo chattr -R -i ~/Dropbox
+    # $ sudo chmod -R u+rw ~/Dropbox ~/.dropbox
+    
 #Development environment
 
 $ rvm install ruby-1.9.3-p194
